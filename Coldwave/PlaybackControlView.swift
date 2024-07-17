@@ -31,7 +31,7 @@ struct PlaybackControlView: View {
                 Image(systemName: "forward.end.fill")
             }
             
-            let selectedItem = (state.playlist.isEmpty) ? "Album Tracks" : state.playlist[state.currentTrack].lastPathComponent
+            let selectedItem = (state.currentTitle == "") ? "Album Tracks" : state.currentTitle
             Menu(selectedItem) {
                 ForEach(state.playlist.indices, id: \.self) { trackIndex in
                     Button(state.playlist[trackIndex].lastPathComponent) {
